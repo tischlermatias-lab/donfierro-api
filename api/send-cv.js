@@ -11,10 +11,24 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { nombre, email, telefono, mensaje } = req.body || {};
+  const { nombre, email, telefono, localidad, puesto, mensaje, file } = req.body || {};
 
   return res.status(200).json({
     ok: true,
-    recibido: { nombre, email, telefono, mensaje }
+    recibido: {
+      nombre,
+      email,
+      telefono,
+      localidad,
+      puesto,
+      mensaje,
+      file: file
+        ? {
+            name: file.name,
+            hasContent: !!file.content,
+            contentLength: file.content ? file.content.length : 0
+          }
+        : null
+    }
   });
 }
