@@ -19,7 +19,7 @@ export default async function handler(req, res) {
 
   try {
     await resend.emails.send({
-      from: 'Don Fierro <cv@donfierro.com.ar>',
+      from: 'Don Fierro - Empleos <cv@donfierro.com.ar>',
       to: ['matias.tischler@donfierro.com.ar'],
       subject: 'Nuevo CV recibido',
       html: `
