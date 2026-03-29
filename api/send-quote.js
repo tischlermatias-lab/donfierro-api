@@ -29,7 +29,7 @@ export default async function handler(req, res) {
 
   try {
     await resend.emails.send({
-      from: 'Don Fierro <cotizaciones@donfierro.com.ar>',
+      from: 'Don Fierro - Cotizaciones <cotizaciones@donfierro.com.ar>',
       to: ['matias.tischler@donfierro.com.ar'],
       subject: 'Nueva cotización web',
       html: `
